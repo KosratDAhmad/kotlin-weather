@@ -9,12 +9,12 @@ import org.jetbrains.anko.db.*
  * Created by kosrat on 11/23/17.
  */
 
-class ForecastDBHelper(ctx: Context = App.instance): ManagedSQLiteOpenHelper(ctx, DB_NAME, null, DB_VERSION) {
+class ForecastDbHelper(ctx: Context = App.instance): ManagedSQLiteOpenHelper(ctx, DB_NAME, null, DB_VERSION) {
 
     companion object {
         val DB_NAME = "forecast.db"
         val DB_VERSION = 1
-        val instance by lazy { ForecastDBHelper }
+        val instance by lazy { ForecastDbHelper() }
     }
 
     override fun onCreate(db: SQLiteDatabase) {

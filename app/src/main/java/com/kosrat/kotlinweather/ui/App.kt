@@ -1,7 +1,7 @@
 package com.kosrat.kotlinweather.ui
 
 import android.app.Application
-import com.kosrat.kotlinweather.ui.utils.DelegatesExt
+import com.kosrat.kotlinweather.extensions.DelegatesExt
 
 /**
  * Created by kosrat on 11/20/17.

@@ -1,4 +1,4 @@
-package com.kosrat.kotlinweather.data
+package com.kosrat.kotlinweather.data.server
 
 /**
  * Created by kosrat on 11/10/17.

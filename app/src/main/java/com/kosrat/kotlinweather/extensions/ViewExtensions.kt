@@ -1,4 +1,4 @@
-package com.kosrat.kotlinweather.ui.utils
+package com.kosrat.kotlinweather.extensions
 
 import android.content.Context
 import android.view.View

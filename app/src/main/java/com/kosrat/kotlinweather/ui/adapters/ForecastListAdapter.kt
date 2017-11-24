@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import com.kosrat.kotlinweather.R
 import com.kosrat.kotlinweather.domain.model.Forecast
 import com.kosrat.kotlinweather.domain.model.ForecastList
-import com.kosrat.kotlinweather.ui.utils.ctx
+import com.kosrat.kotlinweather.extensions.ctx
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_forecast.view.*
+import java.text.DateFormat
+import java.util.*
 
 /**
  *
@@ -37,12 +39,17 @@ class ForecastListAdapter(private val items: ForecastList,
         fun bindForecast(forecast: Forecast) {
             with(forecast) {
                 Picasso.with(itemView.ctx).load(iconUrl).into(itemView.icon)
-                itemView.date.text = date
+                itemView.date.text = convertDate(date)
                 itemView.description.text = description
                 itemView.maxTemperature.text = "${high}º"
                 itemView.minTemperature.text = "${low}º"
                 itemView.setOnClickListener { itemClick(this) }
             }
+        }
+
+        private fun convertDate(date: Long): String {
+            val df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault())
+            return df.format(date)
         }
     }
 }
